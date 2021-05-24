@@ -16,10 +16,21 @@ int main()
 
 	for (int j = 1; j <= t; j++)
 	{
-		ll n, k, ans;
-		cin >> n;
+		ll g; cin >> g;
 
-		cout << "Case #" << j << ": " << ans << endl;
+		ll cnt = 0;
+		for (int k = 1; k <= g; k++)
+		{
+			ll sum = (k * (k - 1) / 2);
+
+			for (int i = 1; i <= g; i++)
+			{
+				if (((k + i) * (k + i - 1) / 2) - sum == g)
+					cnt++;
+			}
+		}
+
+		cout << "Case #" << j << ": " << cnt << endl;
 	}
 
 	return 0;
